@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}PublicItem index{% endblock %}
+
+{% block body %}
+    <h1>PublicItem index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>Size</th>
+                <th>Description</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for public_item in public_items %}
+            <tr>
+                <td>{{ public_item.id }}</td>
+                <td>{{ public_item.name }}</td>
+                <td>{{ public_item.size }}</td>
+                <td>{{ public_item.description }}</td>
+                <td>
+                    <a href="{{ path('app_public_item_show', {'id': public_item.id}) }}">show</a>
+                    <a href="{{ path('app_public_item_edit', {'id': public_item.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="5">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_public_item_new') }}">Create new</a>
+{% endblock %}

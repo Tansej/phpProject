@@ -12,7 +12,9 @@
         </p>
 
         <p>
-            <a href="{{ path('app_product') }}">Products</a>
+            <a href="{{ path('app_product') }}">Products controller page</a>
+            <br>
+            <a href="{{ path('app_subject_index') }}">Subjects CRUD</a>
         </p>
 
         {% else %}
@@ -22,5 +24,7 @@
         <p>Please <a href="{{ path('app_login') }}">sign in</a> to access this app or you can <a href="{{ path('app_register') }}">create new account</a>.</p>
 
     {% endif %}
+
+    <a href="{{ path('app_public_item_index') }}">Public items</a>
 
 {% endblock %}

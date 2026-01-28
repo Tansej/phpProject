@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}New PublicItem{% endblock %}
+
+{% block body %}
+    <h1>Create new PublicItem</h1>
+
+    {{ include('public_item/_form.html.twig') }}
+
+    <a href="{{ path('app_public_item_index') }}">back to list</a>
+{% endblock %}
