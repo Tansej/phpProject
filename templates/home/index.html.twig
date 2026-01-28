@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+    {% if app.user %}
+        <h1>
+            Welcome, {{ app.user.userIdentifier }}
+        </h1>
+        <br>
+        <p>
+            If you want to sign in to a different account, you can log out <a href="{{ logout_path() }}">here</a>.
+        </p>
+
+        <p>
+            <a href="{{ path('app_product') }}">Products</a>
+        </p>
+
+        {% else %}
+
+        <h1>Welcome!</h1>
+
+        <p>Please <a href="{{ path('app_login') }}">sign in</a> to access this app or you can <a href="{{ path('app_register') }}">create new account</a>.</p>
+
+    {% endif %}
+
+{% endblock %}
